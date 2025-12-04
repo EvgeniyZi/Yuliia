@@ -105,13 +105,35 @@ a {
 header ul {
     display: flex;
     list-style-type: none;
-    column-gap: 20px;
+    column-gap: 5px;
     padding: 0 10px;
+    transition: 0.3s;
 }
 
 header li {
     padding: 10px;
     font-size: 1.2em;
+}
+
+header .burger-button {
+    display: none;
+    height: 40px;
+    width: 40px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 5px;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.248);
+    border-radius: 1rem 0.5rem;
+    transition: 0.3s;
+}
+
+.burger-button span {
+    display: block;
+    height: 3px;
+    width: 20px;
+    background-color: rgba(0, 0, 0, 0.763);
+    border-radius: 1.5px;
 }
 
 section {
@@ -146,7 +168,7 @@ section {
     /* place-items: center; */
     grid-template-columns: repeat(3, 1fr);
     gap: 1em;
-    transition: 0.9s;
+    /* transition: 0.9s; */
     width: 100%;
 }
 
@@ -177,7 +199,8 @@ section {
     box-shadow: 0 0 2px rgba(0, 0, 0, 0.473);
     /* box-shadow: none; */
     border-radius: 2rem 2rem;
-    min-height: 20em;
+
+    height: 30vw;
     transition: 0.3s;
 }
 
@@ -234,12 +257,21 @@ section {
     font-size: 1.2rem;
 }
 
+.sign_up h3 {
+    text-align: center;
+}
+
 .sign_up label {
     display: flex;
     flex-direction: column;
     align-items: center;
     row-gap: 0.4rem;
     font-family: 'Roboto', Arial, sans-serif;
+    text-align: center;
+}
+
+.sign_up textarea {
+    max-width: 300px;
 }
 
 .sign_up input,
@@ -283,9 +315,10 @@ button:hover {
 footer div {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    column-gap: 5vw;
+    gap: 5vw;
     transition: 0.3s;
     padding: 0.8rem;
 }
@@ -309,4 +342,28 @@ footer a {
         grid-template-columns: repeat(2, 1fr);
     }
 
+}
+
+@media (max-width: 780px) {
+
+    header .burger-button {
+        display: flex;
+        transition: 0.3s;
+    }
+    
+    header ul {
+        display: none;
+        transition: 0.3s;
+    }
+
+}
+
+@media (max-width: 380px) {
+
+    footer div {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        justify-items: center;
+    }
+    
 }
